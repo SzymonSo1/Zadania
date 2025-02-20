@@ -30,31 +30,9 @@ wiekszyElement:
     mov byte [edi], 0   
     dec edi
 
-conv:               ;zamiana na string
-    xor edx, edx    ;{
-    div ebx
-    add dl, '0'
-    mov [edi], dl
-    dec edi
-    test eax, eax   ;}
-    jnz conv
-
-    mov eax, 4          ;wypisanie wyniku{
-    mov ebx, 1          
-    lea ecx, [edi + 1]
-    mov edx, buffer + 10
-    sub edx, ecx
-    int 0x80            
-    
-    mov eax, 4
-    mov ebx, 1
-    mov ecx, newline
-    mov edx, 1
-    int 0x80            ;}
-
 _end:
+    mov ebx, eax
     mov eax, 1   
-    xor ebx, ebx
     int 0x80  
 
 
