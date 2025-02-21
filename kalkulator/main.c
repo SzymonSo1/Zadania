@@ -3,34 +3,32 @@
 extern int add(int a, int b);
 extern int sub(int a, int b);
 
-int liczba1;
-int liczba2;
-char wybor = '+';
-
 int main() {
+    int liczba1;
+    int liczba2;
+    int wybor = 1;
     start();
     int wynik;
 
-    wypiszPobranieLiczby();
-    getNumbs();
+    wypiszPobranieLiczb();
+    liczba1 = scanf("%d", &liczba1);
+    liczba2 = scanf("%d", &liczba2);
 
-    if (wybor == '+')
+    printf("checkpoint1");
+    if (wybor == 1)
     {
         wynik = add(liczba1,liczba2);
         printf("%d wynik dodania to:", wynik);
-    }else if(wybor=='-')
+    }
+    else if(wybor==2)
     {
         wynik = sub(liczba1, liczba2);
         printf("%d wynik odejmowania to: ", wynik);
-    }else
+    }
+    else
     {
         printf("Niepoprawny input");
     }
-
+    printf("checkpoint2");
     return 0;
-}
-
-void getNumbs(){
-    scanf("%d", &liczba1);
-    scanf("%d", &liczba2);
 }
