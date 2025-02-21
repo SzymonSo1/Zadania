@@ -11,7 +11,7 @@ section .text
     global add
     global sub
     extern start 
-    extern wypiszPobranieLiczby
+    extern wypiszPobranieLiczb
 
 add:
     mov eax, [esp+4]
@@ -36,7 +36,7 @@ start:
     mov edx, oplen
     ret
 
-wypiszPobranieLiczby:
+wypiszPobranieLiczb:
     mov eax, 4 
     mov ebx, 1
     mov ecx, Liczby
